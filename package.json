@@ -1,0 +1,42 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "the third rsschool's task",
+  "main": "src/index.ts",
+  "scripts": {
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
+    "prestart:dev": "npm run lint",
+    "start:dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --cache --ext .ts .",
+    "lint:fix": "eslint --cache --ext .ts . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LehaGer/crud-api.git"
+  },
+  "author": "https://github.com/LehaGer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LehaGer/crud-api/issues"
+  },
+  "homepage": "https://github.com/LehaGer/crud-api#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "eslint": "^8.31.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "uuid": "^9.0.0"
+  }
+}
