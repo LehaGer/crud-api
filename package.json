@@ -2,17 +2,18 @@
   "name": "crud-api",
   "version": "1.0.0",
   "description": "the third rsschool's task",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "prebuild": "npm run lint",
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node .",
-    "prestart:dev": "npm run lint",
-    "start:dev": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon -e ts -w src -x npm run start:dev:tsnode",
+    "prestart:dev:tsnode": "npm run lint",
+    "start:dev:tsnode": "ts-node src/index.ts",
     "lint": "eslint --cache --ext .ts .",
-    "lint:fix": "eslint --cache --ext .ts . --fix"
+    "lint:fix": "eslint --cache --ext .ts . --fix",
+    "test": "jest --config=jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,8 @@
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.3.1",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.3",
@@ -40,6 +43,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "@types/uuid": "^9.0.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "uuid": "^9.0.0"
