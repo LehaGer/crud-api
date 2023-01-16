@@ -1,5 +1,5 @@
 import request from 'supertest';
-import server from './src/server';
+import server from '../server';
 
 describe("application's testing", () => {
   describe('GET /users', () => {
