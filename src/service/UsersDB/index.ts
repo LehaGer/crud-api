@@ -13,14 +13,7 @@ class UsersDB {
    *   },
    * ];
    **/
-  private static _users: IUser[] = [
-    {
-      id: 'f1c5bcff-b26d-4204-a6c5-dbf784a7262d',
-      username: 'Teddd',
-      age: 27,
-      hobbies: ['swimming', 'basketball'],
-    },
-  ];
+  private static _users: IUser[] = [];
 
   public static getUser(uuid?: IUserIdType) {
     return uuid ? this._users.filter((user) => user.id === uuid)[0] : this._users;
