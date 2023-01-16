@@ -54,5 +54,5 @@ for PORT configuring create .env file in the root dir with corresponding field
         - Server answer with `status code` **204** if the record is found and deleted
         - Server answer with `status code` **400** and corresponding message if `userId` is invalid (not `uuid`)
         - Server answer with `status code` **404** and corresponding message if record with `id === userId` doesn't exist
-2. Requests to non-existing endpoints (e.g. `some-non/existing/resource`) is handled (server answer with `status code` **404** and corresponding human-friendly message)
+2. Requests to non-existing endpoints (e.g. `some-non/existing/resource`) are handled (server answer with `status code` **404** and corresponding human-friendly message)
 3. Errors on the server side that occur during the processing of a request are handled and processed correctly (server answer with `status code` **500** and corresponding human-friendly message)
