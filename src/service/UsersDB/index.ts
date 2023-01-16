@@ -16,12 +16,18 @@ class UsersDB {
   }
 
   public static postUser(newUser: IUser) {
-    this._users = [...this._users, newUser];
+    this._users = [
+      ...this._users,
+      {
+        id: v4(),
+        ...newUser,
+      },
+    ];
     return true;
   }
 
   public static putUser(uuid: IUserIdType, newUsersData) {
-    this._users.filter((user) => user.id === uuid)[0] = {
+    this._users = this._users.filter((user) => user.id === uuid)[0] = {
       ...this._users.filter((user) => user.id === uuid)[0],
       ...newUsersData,
     };
