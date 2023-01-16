@@ -2,14 +2,18 @@ import { IUser, IUserIdType } from '../../types';
 import { v4 } from 'uuid';
 
 class UsersDB {
-  private static _users: IUser[] = [
-    {
-      id: v4(),
-      username: 'Ted',
-      age: 25,
-      hobbies: ['swimming', 'basketball'],
-    },
-  ];
+  /**
+   * Array of user's objects im formst:
+   * [
+   *   {
+   *     id: v4(),
+   *     username: 'Ted',
+   *     age: 25,
+   *     hobbies: ['swimming', 'basketball'],
+   *   },
+   * ];
+   **/
+  private static _users: IUser[] = [];
 
   public static getUser(uuid?: IUserIdType) {
     return uuid ? this._users.filter((user) => user.id === uuid)[0] : this._users;
@@ -39,7 +43,7 @@ class UsersDB {
   }
 
   public static deleteUser(uuid) {
-    this._users = this._users.filter((user) => user !== uuid);
+    this._users = this._users.filter((user) => user.id !== uuid);
     return true;
   }
 }
