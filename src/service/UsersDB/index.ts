@@ -27,10 +27,14 @@ class UsersDB {
   }
 
   public static putUser(uuid: IUserIdType, newUsersData) {
-    this._users = this._users.filter((user) => user.id === uuid)[0] = {
-      ...this._users.filter((user) => user.id === uuid)[0],
-      ...newUsersData,
-    };
+    this._users.forEach((user, index) => {
+      if (user.id === uuid) {
+        this._users[index] = {
+          ...user,
+          ...newUsersData,
+        };
+      }
+    });
     return true;
   }
 
