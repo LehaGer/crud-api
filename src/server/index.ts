@@ -2,7 +2,6 @@ import { MethodsTypes } from '../types';
 import http from 'node:http';
 import UsersDB from '../service/UsersDB';
 import { getData, isCorrectUuidFormat, isCorrespondingToUserSchema } from '../customFunctions';
-import cluster from 'node:cluster';
 
 const server = http.createServer(async (req, res) => {
   try {

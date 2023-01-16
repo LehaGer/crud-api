@@ -6,7 +6,7 @@ import createLoadBalancer from './loadBalancer';
 
 dotenv.config();
 
-const { PORT, IS_MULTI_MODE } = process.env;
+const { PORT = '4000', IS_MULTI_MODE } = process.env;
 
 const workersPorts = [];
 
